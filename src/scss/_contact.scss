@@ -1,0 +1,102 @@
+@use "mixins";
+@use "variables" as v;
+@use "reset";
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  color: rgba(76, 32, 22, 255);
+  padding: 60px;
+  @include mixins.desktop {
+    padding: 200px;
+  }
+
+  &__wrapper {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    @include mixins.desktop {
+      flex-direction: row;
+    }
+  }
+
+  &__textwrapper {
+    @include mixins.desktop {
+      flex-direction: row;
+    }
+  }
+
+  &__imagewrapper {
+    display: flex;
+    padding-top: 80px;
+    @include mixins.desktop {
+      flex-direction: row;
+      padding-left: 140px;
+    }
+  }
+
+  &__smallheader {
+    @include mixins.headerh3;
+    padding: 10px 0px 10px 0px;
+    text-align: start;
+    color: rgba(76, 32, 22, 255);
+    @include mixins.desktop {
+      font-size: 2em;
+      max-width: 60%;
+    }
+  }
+
+  &__infotext {
+    font-family: "Montserrat";
+    color: rgba(76, 32, 22, 255);
+    font-size: 12px;
+    line-height: 1.9em;
+    font-weight: 400;
+    text-align: center;
+    padding-top: 15px;
+    justify-content: center;
+    @include mixins.desktop {
+      font-size: 16px;
+      justify-content: start;
+      align-items: flex-start;
+    }
+  }
+
+  &__portrait {
+    @include mixins.image;
+    margin: 0px;
+    @include mixins.desktop {
+      height: 350px;
+      width: 350px;
+      flex-direction: row;
+      justify-content: end;
+    }
+  }
+
+  .contact_header {
+    @include mixins.headerh2;
+    justify-content: center;
+    text-align: start;
+    @include mixins.desktop {
+      font-size: 9em;
+      max-width: 60%;
+    }
+  }
+
+  .button {
+    color: white;
+    justify-content: center;
+  }
+
+  &__signature {
+    width: 100%;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-direction: column;
+    padding-top: 70px;
+    @include mixins.desktop {
+      max-width: 20%;
+      flex-direction: row;
+    }
+  }
+}

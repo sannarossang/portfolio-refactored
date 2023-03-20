@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sanna Rossäng - Portfolio</title>
+
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="scss/main.scss" />
+    <script defer src="/src/ts/main.ts" type="module"></script>
+
+    <!-- Font family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Aboreto&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Favicon in tab-->
+    <link
+      rel="shortcut icon"
+      type="image/ico"
+      href="./assets/favicon-illustration.ico"
+    />
+  </head>
+
+  <!-- Bootstap icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
+  />
+
+  <!-- Start of 3-columndesign -->
+  <body>
+    <!-- Header with logo and navbar -->
+    <header class="header">
+      <input class="menu-btn" type="checkbox" id="menu-btn" />
+      <label class="menu-icon" for="menu-btn"
+        ><span class="nav-icon"></span
+      ></label>
+      <ul class="menu">
+        <div class="menu__imagewrapper">
+          <!-- <img
+            class="header__signature"
+            src="./assets/SR1.png"
+            alt="illustrated portrait of sanna rossang"
+          /> -->
+        </div>
+        <!-- <div class="menu__linkwrapper"> -->
+          <li><a href="#home">HOME</a></li>
+          <li><a href="#about">ABOUT</a></li>
+          <li><a href="#minaprojekt">PROJECTS</a></li>
+          <li><a href="#experience">CV</a></li>
+          <li><a href="#contact">CONTACT</a></li>
+      </ul>
+    </div>
+    </header>
+
+    <aside class="some"></aside>
+    <a name="home"></a>
+    <section class="startpage">
+      <article class="startpage__wrapper">
+        <img
+          class="startpage__portrait"
+          src="./assets/illustration.png"
+          alt="illustrated portrait of sanna rossang"
+        />
+        <article class="startpage_textwrapper">
+          <span class="startpage__infotitle"> Hi, I'm Sanna! </span>
+          <span class="startpage__infotext">
+            I'm a creative junior front end developer and former journalist
+          </span>
+        </article>
+      </article>
+    </section>
+    <!-- 
+ Home aside SoMe
+    <aside>
+        <article class="some">
+          <a href="https://www.instagram.com/sannarossang/">
+            <i
+              class="bi bi-linkedin"
+              title="Sanna Rossängs Instagram-konto"
+            ></i>
+          </a>
+          <a href="https://www.instagram.com/sannarossang/">
+            <i class="bi bi-twitter" title="Sanna Rossängs Instagram-konto"></i>
+          </a>
+          <a href="https://www.instagram.com/sannarossang/">
+            <i
+              class="bi bi-instagram"
+              title="Sanna Rossängs Instagram-konto"
+            ></i>
+          </a>
+          <a href="https://www.instagram.com/sannarossang/">
+            <i class="bi bi-github" title="Sanna Rossängs Instagram-konto"></i>
+          </a>
+        </article>
+      </aside> -->
+    <!-- 
+Home aside email
+      <section class="col-0 d-none d-lg-block col-lg-2">
+        <a class="email" href="mailto:sanna.rossang@gmail.com"
+          >sanna.rossang@gmail.com</a
+        >
+      </section>
+    </section>  -->
+
+    <!-- About -->
+    <a name="about"></a>
+    <section class="about">
+      <article class="about__textbox">
+        <h2 class="about__infoheader">About</h2>
+        <h3 class="about__smallheader">
+          FROM JOURNALIST TO FRONT END DEVELOPER
+        </h3>
+        <p class="about__infotext">
+          My name is Sanna. I'm a junior front end developer currently studying
+          at <a class="textlink" href="https://medieinstitutet.se/utbildningar/front-end-developer/" target="_blank">Medieinstitutet</a> in Stockholm. Always with a creative perspective in
+          mind, I strive to keep on developing my skills as a developer and also
+          bring my experience as a former journalist to the tech industry.<br /><br />
+          Next up is my first internship this autumn. I hope to find a great
+          match where I can contribute and at the same time keep growing in
+          my new career as a front end developer.
+          <br /><br />
+          Have a great one!<br />
+          /Sanna
+        </p>
+      </article>
+    </section>
+
+    <!-- Projects -->
+    <a name="minaprojekt"></a>
+    <section class="project-section">
+      <!-- <div id="myGitProjects"> -->
+      <h2 class="project_header">PROJECTS</h2>
+      <h3 class="project__smallheader">
+        Let's be creative! Here is some of my work so far
+      </h3>
+      <div id="myNewProjects"></div>
+      <p class="otherproject__smallheader">Some more other projects</p>
+      <div id="myOtherProjects">
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <a name="experience"></a>
+    <section class="experience">
+      <h2 class="experience_header">CV</h2>
+      <h3 class="experience__smallheader">
+        It's been a while! Let's break it down.
+      </h3>
+      <span class="experience__infotext">
+        Since graduating as a journalist, I've had the opportunity to do a lot of fun stuff with brilliant people. After starting out as a sports reporter, I've had most of my experience in magazine, social media and digital editorial environments.
+      </span>
+
+      <h3 class="experience__smallheader">
+        Temporary editorial director, Motherhood.se
+      </h3>
+      <span class="experience__infotext">
+        For a little more than a year, I had the temporary position as editorial
+        director for Aller medias first (and almost newborn) brand within
+        parenting - <a class="textlink" href="https://https://www.motherhood.se/" target="_blank">Motherhood.se</a>. During that year I also had the opportunity to be project manager for Motherhoods one shot magazine Bebisbibeln.
+      </span>
+      <h3 class="experience__smallheader">
+        Social media editor, ELLE.se
+      </h3>
+      <span class="experience__infotext">
+        SoMe editor and content producer for <a class="textlink" href="https://https://www.elle.se/" target="_blank">ELLE.se</a>. I was in team responsible for the ELLE Swedens social media
+        channels. Also kind of Business Owner for ELLE together with a dear
+        colleague when we changed CMS from Wordpress to Aller medias own CMS
+        Labrador.
+      </span>
+      <h3 class="experience__smallheader">
+        Interior editor for ELLE Decoration and ELLE.se/decoration
+      </h3>
+      <span class="experience__infotext">
+        Interior editor for the magazine ELLE Decoration and also digital editor at <a class="textlink" href="https://https://www.elle.se/decoration" target="_blank">ELLE.se/decoration</a>. 
+      </span>
+      <br />
+      <button class="button">
+        <a href="../src/assets/SannaRossang-CV.pdf" target="_blank">CV</a>
+        </button>
+    </section>
+
+    <!-- Contact -->
+    <a name="contact"></a>
+    <section class="contact">
+      <article class="contact__wrapper">
+        <article class="contact__textwrapper">
+          <h2 class="contact_header">CONTACT</h2>
+          <h3 class="contact__smallheader">Let's get in touch!</h3>
+          <span class="contact__infotext">
+            Did you find at least one or two things interesting that hopefully
+            also may contribute to your company? Just let me know! I would love
+            to hear from you!
+            <br />
+            <br />
+            If you're interested in getting in touch with me just click the
+            button below and send me an email and I will get back to you.
+          </span>
+          <br />
+          <br />
+          <br />
+          <button class="button">
+            <a href="mailto:sannarossang@gmail.com">contact me</a>
+          </button>
+        </article>
+        <article class="contact__imagewrapper">
+          <img
+            class="contact__portrait"
+            src="./assets/sannarossang2.png"
+            alt="illustrated portrait of sanna rossang"
+          />
+        </article>
+      </article>
+      <img
+        class="contact__signature"
+        src="./assets/sannarossanglogowritten.png"
+        alt="illustrated portrait of sanna rossang"
+      />
+    </section>
+
+    <!-- Footer -->
+
+    <footer class="footer">
+      <p class="footer_copyright">Copyright Sanna Rossäng &COPY; with love</p>
+      <p class="footer_copyright">Illustration Josefin Rossäng 
+      <article class="footer__some">
+        <a href="https://www.instagram.com/sannarossang/">
+          <i class="bi bi-linkedin" title="Sanna Rossängs Instagram-konto"></i>
+        </a>
+        <a href="https://www.instagram.com/sannarossang/">
+          <i class="bi bi-twitter" title="Sanna Rossängs Instagram-konto"></i>
+        </a>
+        <a href="https://www.instagram.com/sannarossang/">
+          <i class="bi bi-instagram" title="Sanna Rossängs Instagram-konto"></i>
+        </a>
+        <a href="https://www.instagram.com/sannarossang/">
+          <i class="bi bi-github" title="Sanna Rossängs Instagram-konto"></i>
+        </a>
+      </article>
+    </footer>
+  </body>
+</html>

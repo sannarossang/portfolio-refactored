@@ -1,0 +1,173 @@
+@use "mixins";
+@use "variables" as v;
+
+a {
+  color: v.$primary-color;
+  font-family: "Aboreto";
+  font-weight: bold;
+  margin: 15px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a:hover {
+  color: rgba(76, 32, 22, 255);
+  text-decoration: underline dotted;
+}
+
+.header {
+  background-color: #f4d8b0;
+  width: 100%;
+  font-size: 1.2em;
+  position: fixed;
+
+  li {
+    flex-direction: row;
+    @include mixins.desktop {
+      justify-content: flex-start;
+      flex-direction: row;
+    }
+  }
+
+  ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    align-items: center;
+    flex-direction: column;
+    @include mixins.desktop {
+      flex-direction: row;
+    }
+  }
+
+  a {
+    display: block;
+    padding: 5px;
+    text-decoration: none;
+    flex-direction: row;
+    @include mixins.desktop {
+      padding: 20px 30px;
+      flex-direction: row;
+    }
+
+    &:hover {
+      display: flex;
+      @include mixins.desktop {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  clear: both;
+  max-height: 0;
+  transition: max-height 0.2s ease-out;
+  flex-direction: row;
+  @include mixins.desktop {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    clear: none;
+    max-height: none;
+  }
+
+  &__imagewrapper {
+    justify-content: flex-start;
+    flex-direction: column;
+    @include mixins.desktop {
+      flex-direction: row;
+    }
+  }
+
+  &__linkwrapper {
+    justify-content: flex-end;
+    flex-direction: column;
+    @include mixins.desktop {
+      flex-direction: row;
+    }
+  }
+}
+
+.menu-icon {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  padding: 28px 25px;
+  cursor: pointer;
+
+  @include mixins.desktop {
+    display: none;
+  }
+
+  .nav-icon {
+    background: v.$primary-color;
+    display: block;
+    height: 5px;
+    width: 30px;
+    border-radius: 15px;
+    position: relative;
+    transition: background 0.2s ease-out;
+
+    &::before {
+      background: v.$primary-color;
+      content: "";
+      display: block;
+      height: 100%;
+      position: absolute;
+      border-radius: 15px;
+      transition: all 0.2s ease-out;
+      width: 100%;
+      top: 11px;
+    }
+
+    &::after {
+      background: v.$primary-color;
+      content: "";
+      display: block;
+      height: 100%;
+      position: absolute;
+      border-radius: 15px;
+      transition: all 0.2s ease-out;
+      width: 100%;
+      top: -11px;
+    }
+  }
+}
+
+.menu-btn {
+  display: none;
+  &:checked ~ .menu {
+    max-height: 500px;
+  }
+  //hitta header
+
+  &:checked ~ .menu-icon .nav-icon {
+    background: transparent;
+  }
+
+  &:checked ~ .menu-icon .nav-icon::before {
+    transform: rotate(-45deg);
+    top: 0;
+  }
+
+  &:checked ~ .menu-icon .nav-icon::after {
+    transform: rotate(45deg);
+    top: 0;
+  }
+}
+
+.header__signature {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  width: 60px;
+  margin: 30px;
+}

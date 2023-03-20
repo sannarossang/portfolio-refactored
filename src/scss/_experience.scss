@@ -1,0 +1,46 @@
+@use "mixins";
+@use "variables" as v;
+@use "reset";
+
+.experience {
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+  color: rgba(76, 32, 22, 255);
+  background-color: white;
+  @include mixins.desktop {
+    padding: 200px;
+  }
+
+  &__smallheader {
+    @include mixins.headerh3;
+    padding: 10px 0px 10px 0px;
+    text-align: start;
+    @include mixins.desktop {
+      font-size: 2em;
+    }
+  }
+
+  &__infotext {
+    font-family: "Montserrat";
+    font-size: 12px;
+    line-height: 1.9em;
+    font-weight: 400;
+    text-align: start;
+    padding-bottom: 40px;
+    max-width: 80%;
+    @include mixins.desktop {
+      font-size: 16px;
+      max-width: 50%;
+    }
+  }
+
+  .experience_header {
+    @include mixins.headerh2;
+    justify-content: center;
+    text-align: start;
+    @include mixins.desktop {
+      font-size: 9em;
+    }
+  }
+}

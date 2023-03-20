@@ -1,0 +1,27 @@
+@use "mixins";
+@use "variables" as v;
+@use "reset";
+
+.footer {
+  font-family: "Aboreto";
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  background-color: white;
+  font-size: 12px;
+  color: rgba(76, 32, 22, 255);
+  flex-direction: column;
+  padding: 40px;
+  @include mixins.desktop {
+    padding: 60px;
+    font-size: 16px;
+  }
+
+  &__copyright {
+    padding: 20px;
+  }
+
+  // &__some {
+  //   padding: 5px;
+  // }
+}

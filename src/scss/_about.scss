@@ -1,0 +1,68 @@
+@use "mixins";
+@use "variables" as v;
+@use "reset";
+
+.textlink {
+  font-family: "Montserrat";
+  font-size: 12px;
+  line-height: 1.9em;
+  font-weight: 400;
+  text-align: start;
+  max-width: 80%;
+  margin: 0;
+  @include mixins.desktop {
+    font-size: 16px;
+    max-width: 50%;
+  }
+}
+
+.about {
+  display: flex;
+  background-color: white;
+  color: rgba(76, 32, 22, 255);
+  text-align: center;
+  padding: 60px;
+  height: 100vh;
+  @include mixins.desktop {
+    padding: 200px;
+  }
+
+  // &__textbox {
+  // }
+
+  &__infoheader {
+    @include mixins.headerh2;
+    text-align: start;
+    padding-bottom: 10px;
+    @include mixins.desktop {
+      font-size: 9em;
+    }
+  }
+
+  &__smallheader {
+    @include mixins.headerh3;
+    text-align: start;
+    @include mixins.desktop {
+      font-size: 2em;
+    }
+  }
+
+  &__infotext {
+    font-family: "Montserrat";
+    font-size: 12px;
+    line-height: 1.9em;
+    font-weight: 400;
+    text-align: start;
+    padding-top: 15px;
+    max-width: 80%;
+    transition: transform 0.2s;
+    @include mixins.desktop {
+      font-size: 16px;
+      max-width: 50%;
+    }
+
+    &__infotext:hover {
+      transform: scale(1.1);
+    }
+  }
+}
