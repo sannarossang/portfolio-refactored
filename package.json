@@ -1,4 +1,7 @@
 {
+  "scripts": {
+  "start": "npx parcel ./src/index.html"
+  },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.8.0",
     "@parcel/transformer-typescript-tsc": "^2.8.0",
