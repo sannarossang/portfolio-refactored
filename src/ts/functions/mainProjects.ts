@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 import type { Project } from "../models/Projects";
 
-export function mainProjects(projects: Project[]) {
+export function displayMainProjects(projects: Project[]) {
   const projectContainer = document.getElementById("myNewProjects") as HTMLDivElement;
 
   projectContainer.innerHTML = "";
