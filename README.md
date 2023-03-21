@@ -2,13 +2,13 @@
 
 --------
 
-## Commit-standard för detta project
+# Commit-standard för detta project
 
-### FIX: Alla mindre kodändringar/bugfixar
-### REFACTOR: Alla funktionsförändringar/förbättringar
-### FEATURE: Ny funktionalitet och kod 
-### DOCS: Alla uppdateringar i .README
-### BUILD: Allt för uppbyggnad av projektet
-### Style: Alla visuella förändringar kopplat till styling
+#### FIX: Alla mindre kodändringar/bugfixar
+#### REFACTOR: Alla funktionsförändringar/förbättringar
+#### FEATURE: Ny funktionalitet och kod 
+#### DOCS: Alla uppdateringar i .README
+#### BUILD: Allt för uppbyggnad av projektet
+#### STYLE: Alla visuella förändringar kopplat till styling
 
 -------
