@@ -576,19 +576,20 @@ var _webshopsquarePngDefault = parcelHelpers.interopDefault(_webshopsquarePng);
 var _bucketlistnewsquarePng = require("../../assets/bucketlistnewsquare.png");
 var _bucketlistnewsquarePngDefault = parcelHelpers.interopDefault(_bucketlistnewsquarePng);
 class Project {
-    constructor(title, img, description, githublink, languages, link){
+    constructor(title, img, description, githublink, languages, link, alt){
         this.title = title;
         this.img = img;
         this.description = description;
         this.githublink = githublink;
         this.languages = languages;
         this.link = link;
+        this.alt = alt;
     }
 }
 const project1 = new Project("Webshop", // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-(0, _webshopsquarePngDefault.default), "group project with brilliant julia carlberg and ida lindgren. webshop built with typescript.", "https://github.com/sannarossang/webshop.git", "html", "https://rossang-webshop.netlify.app/");
+(0, _webshopsquarePngDefault.default), "group project with brilliant julia carlberg and ida lindgren. webshop built with typescript.", "https://github.com/sannarossang/webshop.git", "html", "https://rossang-webshop.netlify.app/", "webshopsprojektet Up The Wall som visar en webshop av tapeter");
 const project2 = new Project("Bucket list", // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-(0, _bucketlistnewsquarePngDefault.default), "as my first assignment in javascript I created a to do-list but upgrated it to a bucket list!", "https://github.com/sannarossang/bucket-list.git", "html", "https://rossang-bucketlist.netlify.app/");
+(0, _bucketlistnewsquarePngDefault.default), "as my first assignment in javascript I created a to do-list but upgrated it to a bucket list!", "https://github.com/sannarossang/bucket-list.git", "html", "https://rossang-bucketlist.netlify.app/", "bucketlistprojektet Bucket List som visar en klassisk to do-lista med beige bakgrund");
 const projects = [
     project1,
     project2
@@ -731,6 +732,7 @@ function displayMainProjects(projects) {
         const img = document.createElement("img");
         img.className = "project__image";
         img.src = projects[i].img;
+        img.alt = projects[i].alt;
         container.appendChild(img);
         const description = document.createElement("span");
         description.className = "project__description";
@@ -784,14 +786,14 @@ function displayFooter() {
     githubLink.innerHTML = `<i class="bi bi-github" title="Sanna Rossängs Github-konto"></i>`;
     const instagramLink = document.createElement("a");
     instagramLink.href = "https://www.instagram.com/sannarossang/";
-    instagramLink.innerHTML = `<i class="bi bi-instagram" title="Sanna Rossängs Instagram-konto"></i>`;
+    instagramLink.innerHTML = `<i class="bi bi-linkedin" title="Sanna Rossängs Instagram-konto"></i>`;
     const footerContainer = document.querySelector(".footer");
     footerContainer.appendChild(copyright);
     footerContainer.appendChild(copyrightIllustration);
     footerContainer.appendChild(socialMediaBox);
     socialMediaBox.appendChild(linkedinLink);
-    socialMediaBox.appendChild(githubLink);
     socialMediaBox.appendChild(instagramLink);
+    socialMediaBox.appendChild(githubLink);
 }
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["k9g8K","4j3ZX"], "4j3ZX", "parcelRequire94c2")

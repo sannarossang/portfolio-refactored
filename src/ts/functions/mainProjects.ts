@@ -18,6 +18,7 @@ export function displayMainProjects(projects: Project[]) {
     const img: HTMLImageElement = document.createElement("img");
     img.className = "project__image";
     img.src = projects[i].img;
+    img.alt = projects[i].alt;
     container.appendChild(img);
 
     const description: HTMLSpanElement = document.createElement("span");
