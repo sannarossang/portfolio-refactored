@@ -557,151 +557,24 @@ function hmrAccept(bundle, id) {
 }
 
 },{}],"4j3ZX":[function(require,module,exports) {
-// import { IRepo } from "./models/IRepo";
-// import { getRepos } from "./services/gitService";
-// let projects: IRepo[] = [];
-// console.log(projects);
-// async function getProjects() {
-//   projects = await getRepos();
-//   console.log(projects);
-//   projects.splice(3, 1);
-//   console.log(projects);
-//   createHtml(projects);
-// }
-// function createHtml(projects: IRepo[]) {
-//   let myGitProjects = document.getElementById(
-//     "myGitProjects"
-//   ) as HTMLDivElement;
-//   for (let i = 0; i < projects.length; i++) {
-//     let projectContainer = document.createElement("div");
-//     let projectTitle = document.createElement("h2");
-//     let projectDescription = document.createElement("span");
-//     let projectTagsTitle = document.createElement("span");
-//     let projectTags = document.createElement("span");
-//     let projectLinkTitle = document.createElement("span");
-//     let projectLink = document.createElement("a");
-//     let projectLinkIcon = document.createElement("i");
-//     // let projectImage = document.createElement("img");
-//     projectContainer.className = "project";
-//     projectTitle.className = "project__name";
-//     projectDescription.className = "project__description";
-//     projectTagsTitle.className = "project__tagstitle";
-//     projectTags.className = "project__tags";
-//     projectLinkTitle.className = "project__linktitle";
-//     projectLink.className = "project__link";
-//     projectLinkIcon.className = "project__icon";
-//     // projectImage.className = "project__image";
-//     // projectImage.src =
-//     //   "https://github.com/sannarossang/portfolio/blob/master/src/assets/" +
-//     //   projects[i].name +
-//     //   ".png?raw=true";
-//     // projectImage.alt = projects[i].name;
-//     projectTitle.innerHTML = projects[i].name;
-//     projectDescription.innerHTML = projects[i].description;
-//     projectTagsTitle.innerHTML = "Language";
-//     projectTags.innerHTML = projects[i].topics;
-//     projectLinkTitle.innerHTML = "Check it out";
-//     projectLink.href = projects[i].html_url;
-//     projectLink.innerHTML = projects[i].html_url;
-//     projectLink.appendChild(projectLinkIcon);
-//     projectLink.innerHTML = "<i class='bi bi-github'></i>";
-//     projectContainer.appendChild(projectTitle);
-//     projectContainer.appendChild(projectDescription);
-//     projectContainer.appendChild(projectTagsTitle);
-//     projectContainer.appendChild(projectTags);
-//     projectContainer.appendChild(projectLinkTitle);
-//     projectContainer.appendChild(projectLink);
-//     // projectContainer.appendChild(projectImage);
-//     myGitProjects.appendChild(projectContainer);
-//   }
-// }
-// getProjects();
-var _projects = require("./models/Projects");
+var _complementProjects = require("./functions/complementProjects");
+var _footer = require("./functions/footer");
+var _mainProjects = require("./functions/mainProjects");
 var _otherProjects = require("./models/OtherProjects");
-function createHTML(projects) {
-    let projectContainer = document.getElementById("myNewProjects");
-    projectContainer.innerHTML = "";
-    for(let i = 0; i < projects.length; i++){
-        let container = document.createElement("div");
-        container.className = "project";
-        let title = document.createElement("h3");
-        title.className = "project__title";
-        title.innerHTML = projects[i].title;
-        container.appendChild(title);
-        let img = document.createElement("img");
-        img.className = "project__image";
-        img.src = projects[i].img;
-        container.appendChild(img);
-        let description = document.createElement("span");
-        description.className = "project__description";
-        description.innerHTML = projects[i].description;
-        container.appendChild(description);
-        let iconContainer = document.createElement("div");
-        iconContainer.className = "project__iconcontainer";
-        container.appendChild(iconContainer);
-        let projectWebLinkTitle = document.createElement("span");
-        projectWebLinkTitle.className = "project__weblinktitle";
-        container.appendChild(projectWebLinkTitle);
-        let websidelink = document.createElement("a");
-        websidelink.className = "project__websidelink";
-        websidelink.href = projects[i].link;
-        // projectWebLinkTitle.innerHTML = "Try it out: ";
-        websidelink.innerHTML = '<i class="bi bi-arrow-right-circle-fill"></i>';
-        iconContainer.appendChild(websidelink);
-        let projectLinkTitle = document.createElement("span");
-        projectLinkTitle.className = "project__linktitle";
-        container.appendChild(projectLinkTitle);
-        let githublink = document.createElement("a");
-        githublink.className = "project__link";
-        githublink.href = projects[i].githublink;
-        // projectLinkTitle.innerHTML = "Check it out on github: ";
-        githublink.innerHTML = "<i class='bi bi-github'></i>";
-        iconContainer.appendChild(githublink);
-        let language = document.createElement("span");
-        language.className = "project_langugage";
-        container.appendChild(language);
-        projectContainer.appendChild(container);
-    }
-}
-function createHTMLOther(otherProjects) {
-    let otherProjectContainer = document.getElementById("myOtherProjects");
-    otherProjectContainer.innerHTML = "";
-    for(let i = 0; i < otherProjects.length; i++){
-        let container = document.createElement("div");
-        container.className = "otherproject";
-        // let opcontainer: HTMLDivElement = document.createElement("div");
-        // container.className = "otherproject__container";
-        let title = document.createElement("h3");
-        title.className = "otherproject__title";
-        title.innerHTML = otherProjects[i].title;
-        container.appendChild(title);
-        // let description: HTMLSpanElement = document.createElement("span");
-        // description.className = "otherproject__description";
-        // description.innerHTML = otherProjects[i].description;
-        // container.appendChild(description);
-        let githublink = document.createElement("a");
-        githublink.className = "otherproject__link";
-        githublink.href = otherProjects[i].githublink;
-        // projectLinkTitle.innerHTML = "Check it out on github: ";
-        githublink.innerHTML = "<i class='bi bi-github'></i>";
-        container.appendChild(githublink);
-        otherProjectContainer.appendChild(container);
-    }
-}
-createHTML((0, _projects.projects));
-createHTMLOther((0, _otherProjects.otherProjects));
+var _projects = require("./models/Projects");
+(0, _mainProjects.displayMainProjects)((0, _projects.projects));
+(0, _complementProjects.displayComplementProjects)((0, _otherProjects.otherProjects));
+(0, _footer.displayFooter)();
 
-},{"./models/Projects":"e9ggx","./models/OtherProjects":"lqQHg"}],"e9ggx":[function(require,module,exports) {
+},{"./models/Projects":"e9ggx","./models/OtherProjects":"lqQHg","./functions/complementProjects":"2Y3J6","./functions/mainProjects":"bRscp","./functions/footer":"690Lr"}],"e9ggx":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "Project", ()=>Project);
 parcelHelpers.export(exports, "projects", ()=>projects);
+parcelHelpers.export(exports, "Project", ()=>Project);
 var _webshopsquarePng = require("../../assets/webshopsquare.png");
 var _webshopsquarePngDefault = parcelHelpers.interopDefault(_webshopsquarePng);
 var _bucketlistnewsquarePng = require("../../assets/bucketlistnewsquare.png");
 var _bucketlistnewsquarePngDefault = parcelHelpers.interopDefault(_bucketlistnewsquarePng);
-var _favoritespotssquarePng = require("../../assets/favoritespotssquare.png");
-var _favoritespotssquarePngDefault = parcelHelpers.interopDefault(_favoritespotssquarePng);
 class Project {
     constructor(title, img, description, githublink, languages, link){
         this.title = title;
@@ -712,15 +585,16 @@ class Project {
         this.link = link;
     }
 }
-let project1 = new Project("Webshop", (0, _webshopsquarePngDefault.default), "group project with brilliant julia carlberg and ida lindgren. webshop built with typescript.", "https://github.com/sannarossang/webshop.git", "html", "https://rossang-webshop.netlify.app/");
-let project2 = new Project("Bucket list", (0, _bucketlistnewsquarePngDefault.default), "as my first assignment in javascript I created a to do-list but upgrated it to a bucket list!", "https://github.com/sannarossang/bucket-list.git", "html", "https://rossang-bucketlist.netlify.app/");
-let project3 = new Project("Favorite Spots", (0, _favoritespotssquarePngDefault.default), "created my first app with graphQL. the result was hidden gems in stockholm!", "https://github.com/sannarossang/favorite-spots-stockholm.git", "html", "https://rossang-bucketlist.netlify.app/");
-let projects = [
+const project1 = new Project("Webshop", // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+(0, _webshopsquarePngDefault.default), "group project with brilliant julia carlberg and ida lindgren. webshop built with typescript.", "https://github.com/sannarossang/webshop.git", "html", "https://rossang-webshop.netlify.app/");
+const project2 = new Project("Bucket list", // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+(0, _bucketlistnewsquarePngDefault.default), "as my first assignment in javascript I created a to do-list but upgrated it to a bucket list!", "https://github.com/sannarossang/bucket-list.git", "html", "https://rossang-bucketlist.netlify.app/");
+const projects = [
     project1,
     project2
 ];
 
-},{"../../assets/webshopsquare.png":"cIxnN","../../assets/bucketlistnewsquare.png":"bMl6V","../../assets/favoritespotssquare.png":"btbxw","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"cIxnN":[function(require,module,exports) {
+},{"../../assets/webshopsquare.png":"cIxnN","../../assets/bucketlistnewsquare.png":"bMl6V","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"cIxnN":[function(require,module,exports) {
 module.exports = require("403f433cdeb709da").getBundleURL("1e3qO") + "webshopsquare.4d353e87.png" + "?" + Date.now();
 
 },{"403f433cdeb709da":"lgJ39"}],"lgJ39":[function(require,module,exports) {
@@ -760,10 +634,7 @@ exports.getOrigin = getOrigin;
 },{}],"bMl6V":[function(require,module,exports) {
 module.exports = require("7671563298031f7d").getBundleURL("1e3qO") + "bucketlistnewsquare.1dfabbde.png" + "?" + Date.now();
 
-},{"7671563298031f7d":"lgJ39"}],"btbxw":[function(require,module,exports) {
-module.exports = require("f3fbbc87cd854bc8").getBundleURL("1e3qO") + "favoritespotssquare.e977edd0.png" + "?" + Date.now();
-
-},{"f3fbbc87cd854bc8":"lgJ39"}],"gkKU3":[function(require,module,exports) {
+},{"7671563298031f7d":"lgJ39"}],"gkKU3":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -796,22 +667,21 @@ exports.export = function(dest, destName, get) {
 },{}],"lqQHg":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "OtherProjects", ()=>OtherProjects);
 parcelHelpers.export(exports, "otherProjects", ()=>otherProjects);
+parcelHelpers.export(exports, "OtherProjects", ()=>OtherProjects);
 class OtherProjects {
-    constructor(title, // public description: string,
-    githublink){
+    constructor(title, githublink){
         this.title = title;
         this.githublink = githublink;
     }
 }
-let otherProject0 = new OtherProjects("Small app in two days with GraphQL", "https://github.com/sannarossang/favorite-spots-stockholm.git");
-let otherProject1 = new OtherProjects("Shopping cart with REST-API", "https://github.com/sannarossang/shopping-cart-rest-.git");
-let otherProject2 = new OtherProjects("Shopping cart with GraphQL-API", "https://github.com/sannarossang/shopping-cart-graphql.git");
-let otherProject3 = new OtherProjects("E2E-testing", "https://github.com/sannarossang/e2e-assignment.git");
-let otherProject4 = new OtherProjects("Unit testing", "https://github.com/sannarossang/unittest-assignment.git");
-let otherProject5 = new OtherProjects("Integration testing", "https://github.com/sannarossang/integrationstests-assignment.git");
-let otherProjects = [
+const otherProject0 = new OtherProjects("Small app in two days with GraphQL", "https://github.com/sannarossang/favorite-spots-stockholm.git");
+const otherProject1 = new OtherProjects("Shopping cart with REST-API", "https://github.com/sannarossang/shopping-cart-rest-.git");
+const otherProject2 = new OtherProjects("Shopping cart with GraphQL-API", "https://github.com/sannarossang/shopping-cart-graphql.git");
+const otherProject3 = new OtherProjects("E2E-testing", "https://github.com/sannarossang/e2e-assignment.git");
+const otherProject4 = new OtherProjects("Unit testing", "https://github.com/sannarossang/unittest-assignment.git");
+const otherProject5 = new OtherProjects("Integration testing", "https://github.com/sannarossang/integrationstests-assignment.git");
+const otherProjects = [
     otherProject0,
     otherProject1,
     otherProject2,
@@ -819,6 +689,110 @@ let otherProjects = [
     otherProject4,
     otherProject5
 ];
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"2Y3J6":[function(require,module,exports) {
+// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "displayComplementProjects", ()=>displayComplementProjects);
+function displayComplementProjects(otherProjects) {
+    const otherProjectContainer = document.getElementById("myOtherProjects");
+    otherProjectContainer.innerHTML = "";
+    for(let i = 0; i < otherProjects.length; i++){
+        const container = document.createElement("div");
+        container.className = "otherproject";
+        const title = document.createElement("h3");
+        title.className = "otherproject__title";
+        title.innerHTML = otherProjects[i].title;
+        container.appendChild(title);
+        const githublink = document.createElement("a");
+        githublink.className = "otherproject__link";
+        githublink.href = otherProjects[i].githublink;
+        githublink.innerHTML = "<i class='bi bi-github'></i>";
+        container.appendChild(githublink);
+        otherProjectContainer.appendChild(container);
+    }
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"bRscp":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "displayMainProjects", ()=>displayMainProjects);
+function displayMainProjects(projects) {
+    const projectContainer = document.getElementById("myNewProjects");
+    projectContainer.innerHTML = "";
+    for(let i = 0; i < projects.length; i++){
+        const container = document.createElement("div");
+        container.className = "project";
+        const title = document.createElement("h3");
+        title.className = "project__title";
+        title.innerHTML = projects[i].title;
+        container.appendChild(title);
+        const img = document.createElement("img");
+        img.className = "project__image";
+        img.src = projects[i].img;
+        container.appendChild(img);
+        const description = document.createElement("span");
+        description.className = "project__description";
+        description.innerHTML = projects[i].description;
+        container.appendChild(description);
+        const iconContainer = document.createElement("div");
+        iconContainer.className = "project__iconcontainer";
+        container.appendChild(iconContainer);
+        const projectWebLinkTitle = document.createElement("span");
+        projectWebLinkTitle.className = "project__weblinktitle";
+        container.appendChild(projectWebLinkTitle);
+        const websidelink = document.createElement("a");
+        websidelink.className = "project__websidelink";
+        websidelink.href = projects[i].link;
+        websidelink.innerHTML = '<i class="bi bi-arrow-right-circle-fill"></i>';
+        iconContainer.appendChild(websidelink);
+        const projectLinkTitle = document.createElement("span");
+        projectLinkTitle.className = "project__linktitle";
+        container.appendChild(projectLinkTitle);
+        const githublink = document.createElement("a");
+        githublink.className = "project__link";
+        githublink.href = projects[i].githublink;
+        githublink.innerHTML = "<i class='bi bi-github'></i>";
+        iconContainer.appendChild(githublink);
+        const language = document.createElement("span");
+        language.className = "project_langugage";
+        container.appendChild(language);
+        projectContainer.appendChild(container);
+    }
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"690Lr":[function(require,module,exports) {
+// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "displayFooter", ()=>displayFooter);
+function displayFooter() {
+    const copyright = document.createElement("p");
+    copyright.classList.add("footer_copyright");
+    copyright.innerHTML = "Copyright Sanna Ross\xe4ng &COPY; with love";
+    const copyrightIllustration = document.createElement("p");
+    copyrightIllustration.classList.add("footer_copyright");
+    copyrightIllustration.innerHTML = "Illustration Josefin Ross\xe4ng";
+    const socialMediaBox = document.createElement("article");
+    socialMediaBox.classList.add("footer_some");
+    const linkedinLink = document.createElement("a");
+    linkedinLink.href = "https://www.linkedin.com/in/sanna-ross%C3%A4ng-3a2434102/?originalSubdomain=se";
+    linkedinLink.innerHTML = `<i class="bi bi-linkedin" title="Sanna Rossängs Linkedin-konto"></i>`;
+    const githubLink = document.createElement("a");
+    githubLink.href = "https://github.com/sannarossang";
+    githubLink.innerHTML = `<i class="bi bi-github" title="Sanna Rossängs Github-konto"></i>`;
+    const instagramLink = document.createElement("a");
+    instagramLink.href = "https://www.instagram.com/sannarossang/";
+    instagramLink.innerHTML = `<i class="bi bi-instagram" title="Sanna Rossängs Instagram-konto"></i>`;
+    const footerContainer = document.querySelector(".footer");
+    footerContainer.appendChild(copyright);
+    footerContainer.appendChild(copyrightIllustration);
+    footerContainer.appendChild(socialMediaBox);
+    socialMediaBox.appendChild(linkedinLink);
+    socialMediaBox.appendChild(githubLink);
+    socialMediaBox.appendChild(instagramLink);
+}
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["k9g8K","4j3ZX"], "4j3ZX", "parcelRequire94c2")
 

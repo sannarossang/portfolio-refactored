@@ -813,6 +813,7 @@ article.some {
 .contact .button {
   color: #fff;
   justify-content: center;
+  margin-top: 50px;
 }
 
 .contact__signature {

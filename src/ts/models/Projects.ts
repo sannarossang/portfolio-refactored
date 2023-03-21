@@ -1,8 +1,5 @@
-export { Project };
-
 import webshop from "../../assets/webshopsquare.png";
 import bucketlist from "../../assets/bucketlistnewsquare.png";
-import favoritespot from "../../assets/favoritespotssquare.png";
 
 class Project {
   constructor(
@@ -15,8 +12,9 @@ class Project {
   ) {}
 }
 
-let project1 = new Project(
+const project1 = new Project(
   "Webshop",
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
   webshop,
   "group project with brilliant julia carlberg and ida lindgren. webshop built with typescript.",
   "https://github.com/sannarossang/webshop.git",
@@ -24,8 +22,9 @@ let project1 = new Project(
   "https://rossang-webshop.netlify.app/"
 );
 
-let project2 = new Project(
+const project2 = new Project(
   "Bucket list",
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
   bucketlist,
   "as my first assignment in javascript I created a to do-list but upgrated it to a bucket list!",
   "https://github.com/sannarossang/bucket-list.git",
@@ -33,13 +32,6 @@ let project2 = new Project(
   "https://rossang-bucketlist.netlify.app/"
 );
 
-let project3 = new Project(
-  "Favorite Spots",
-  favoritespot,
-  "created my first app with graphQL. the result was hidden gems in stockholm!",
-  "https://github.com/sannarossang/favorite-spots-stockholm.git",
-  "html",
-  "https://rossang-bucketlist.netlify.app/"
-);
+export const projects: Project[] = [project1, project2];
 
-export let projects: Project[] = [project1, project2];
+export { Project };
