@@ -784,14 +784,14 @@ function displayFooter() {
     githubLink.innerHTML = `<i class="bi bi-github" title="Sanna Rossängs Github-konto"></i>`;
     const instagramLink = document.createElement("a");
     instagramLink.href = "https://www.instagram.com/sannarossang/";
-    instagramLink.innerHTML = `<i class="bi bi-linkedin" title="Sanna Rossängs Instagram-konto"></i>`;
+    instagramLink.innerHTML = `<i class="bi bi-instagram" title="Sanna Rossängs Instagram-konto"></i>`;
     const footerContainer = document.querySelector(".footer");
     footerContainer.appendChild(copyright);
     footerContainer.appendChild(copyrightIllustration);
     footerContainer.appendChild(socialMediaBox);
     socialMediaBox.appendChild(linkedinLink);
-    socialMediaBox.appendChild(instagramLink);
     socialMediaBox.appendChild(githubLink);
+    socialMediaBox.appendChild(instagramLink);
 }
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["k9g8K","4j3ZX"], "4j3ZX", "parcelRequire94c2")

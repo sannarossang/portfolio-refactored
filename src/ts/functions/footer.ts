@@ -20,7 +20,7 @@ export function displayFooter() {
 
   const instagramLink = document.createElement("a");
   instagramLink.href = "https://www.instagram.com/sannarossang/";
-  instagramLink.innerHTML = `<i class="bi bi-linkedin" title="Sanna Rossängs Instagram-konto"></i>`;
+  instagramLink.innerHTML = `<i class="bi bi-instagram" title="Sanna Rossängs Instagram-konto"></i>`;
 
   const footerContainer = document.querySelector(".footer") as HTMLElement;
 
@@ -28,6 +28,6 @@ export function displayFooter() {
   footerContainer.appendChild(copyrightIllustration);
   footerContainer.appendChild(socialMediaBox);
   socialMediaBox.appendChild(linkedinLink);
-  socialMediaBox.appendChild(instagramLink);
   socialMediaBox.appendChild(githubLink);
+  socialMediaBox.appendChild(instagramLink);
 }
