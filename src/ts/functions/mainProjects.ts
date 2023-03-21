@@ -18,6 +18,7 @@ export function displayMainProjects(projects: Project[]) {
     const img: HTMLImageElement = document.createElement("img");
     img.className = "project__image";
     img.src = projects[i].img;
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     img.alt = projects[i].alt;
     container.appendChild(img);
 
