@@ -558,13 +558,15 @@ function hmrAccept(bundle, id) {
 
 },{}],"4j3ZX":[function(require,module,exports) {
 var _complementProjects = require("./functions/complementProjects");
+var _footer = require("./functions/footer");
 var _mainProjects = require("./functions/mainProjects");
 var _otherProjects = require("./models/OtherProjects");
 var _projects = require("./models/Projects");
 (0, _mainProjects.displayMainProjects)((0, _projects.projects));
 (0, _complementProjects.displayComplementProjects)((0, _otherProjects.otherProjects));
+(0, _footer.displayFooter)();
 
-},{"./models/Projects":"e9ggx","./models/OtherProjects":"lqQHg","./functions/complementProjects":"2Y3J6","./functions/mainProjects":"bRscp"}],"e9ggx":[function(require,module,exports) {
+},{"./models/Projects":"e9ggx","./models/OtherProjects":"lqQHg","./functions/complementProjects":"2Y3J6","./functions/mainProjects":"bRscp","./functions/footer":"690Lr"}],"e9ggx":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "projects", ()=>projects);
@@ -758,6 +760,38 @@ function displayMainProjects(projects) {
         container.appendChild(language);
         projectContainer.appendChild(container);
     }
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"690Lr":[function(require,module,exports) {
+// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "displayFooter", ()=>displayFooter);
+function displayFooter() {
+    const copyright = document.createElement("p");
+    copyright.classList.add("footer_copyright");
+    copyright.innerHTML = "Copyright Sanna Ross\xe4ng &COPY; with love";
+    const copyrightIllustration = document.createElement("p");
+    copyrightIllustration.classList.add("footer_copyright");
+    copyrightIllustration.innerHTML = "Illustration Josefin Ross\xe4ng";
+    const socialMediaBox = document.createElement("article");
+    socialMediaBox.classList.add("footer_some");
+    const linkedinLink = document.createElement("a");
+    linkedinLink.href = "https://www.linkedin.com/in/sanna-ross%C3%A4ng-3a2434102/?originalSubdomain=se";
+    linkedinLink.innerHTML = `<i class="bi bi-linkedin" title="Sanna Rossängs Linkedin-konto"></i>`;
+    const githubLink = document.createElement("a");
+    githubLink.href = "https://github.com/sannarossang";
+    githubLink.innerHTML = `<i class="bi bi-github" title="Sanna Rossängs Github-konto"></i>`;
+    const instagramLink = document.createElement("a");
+    instagramLink.href = "https://www.instagram.com/sannarossang/";
+    instagramLink.innerHTML = `<i class="bi bi-linkedin" title="Sanna Rossängs Instagram-konto"></i>`;
+    const footerContainer = document.querySelector(".footer");
+    footerContainer.appendChild(copyright);
+    footerContainer.appendChild(copyrightIllustration);
+    footerContainer.appendChild(socialMediaBox);
+    socialMediaBox.appendChild(linkedinLink);
+    socialMediaBox.appendChild(instagramLink);
+    socialMediaBox.appendChild(githubLink);
 }
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["k9g8K","4j3ZX"], "4j3ZX", "parcelRequire94c2")
