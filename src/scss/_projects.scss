@@ -22,15 +22,6 @@
   }
 }
 
-// #myGitProjects {
-//   display: flex;
-//   justify-content: row;
-//   padding: 40px;
-//   @include mixins.desktop {
-//     padding: 250px;
-//   }
-// }
-
 #myNewProjects {
   display: flex;
   flex-direction: column;
@@ -80,7 +71,6 @@
 
   &__smallheader {
     @include mixins.headerh3;
-    // padding: 10px 0px 10px 0px;
     text-align: start;
     margin-top: 23px;
     @include mixins.desktop {

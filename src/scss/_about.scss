@@ -27,9 +27,6 @@
     padding: 200px;
   }
 
-  // &__textbox {
-  // }
-
   &__infoheader {
     @include mixins.headerh2;
     text-align: start;
