@@ -2,7 +2,7 @@
 
 --------
 
-# Commit-standard för detta project
+# Commit-standard för detta projekt
 
 #### FIX: Alla mindre kodändringar/bugfixar
 #### REFACTOR: Alla funktionsförändringar/förbättringar
